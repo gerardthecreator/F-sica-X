@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 2: Una Carrera de Trineos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CONFIGURACIÓN DE MATHJAX -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 2
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 2: Una Carrera de Trineos</h1>
+
+                <section>
+                    <h2>Paso 1: Análisis del Problema y Datos</h2>
+                    <p>En este problema, un profesor tira de un trineo y necesitamos calcular el trabajo realizado y la velocidad final. Es importante notar que se parte del reposo y no hay rozamiento, lo que simplifica el análisis de las fuerzas.</p>
+                    
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa total del trineo ($m$) = $80 \, \text{kg}$</li>
+                        <li>Fuerza aplicada ($F$) = $180 \, \text{N}$</li>
+                        <li>Ángulo ($\theta$) = $40^\circ$ con la horizontal</li>
+                        <li>Distancia ($\Delta x$) = $5 \, \text{m}$</li>
+                        <li>Velocidad inicial ($v_i$) = $0 \, \text{m/s}$ (parte del reposo)</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p2" width="400" height="250"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: Cálculo del Trabajo Realizado (a)</h2>
+                    <p>El trabajo realizado por la fuerza aplicada se calcula usando la fórmula general:</p>
+                    <div class="equation">$$W = F \cdot \Delta x \cdot \cos(\theta)$$</div>
+                    <p class="question"><strong>¿Por qué esta fórmula?</strong> El trabajo es una medida de la energía transferida por una fuerza. Solo la componente de la fuerza paralela al desplazamiento realiza trabajo. El coseno del ángulo nos da precisamente esa componente.</p>
+                    <p>Sustituyendo los valores:</p>
+                    <div class="equation">$$W = (180 \, \text{N}) \cdot (5 \, \text{m}) \cdot \cos(40^\circ) \approx 689.4 \, \text{J}$$</div>
+                </section>
+
+                <section>
+                    <h2>Paso 3: Cálculo de la Velocidad Final (b)</h2>
+                    <p>Para determinar la velocidad final, utilizaremos el <strong>Teorema del Trabajo y la Energía Cinética</strong>, que establece que el trabajo neto ($W_{\text{neto}}$) realizado sobre un objeto es igual al cambio en su energía cinética ($\Delta K$).</p>
+                    <div class="equation">$$W_{\text{neto}} = \Delta K = K_f - K_i$$</div>
+                    <p class="question"><strong>¿Por qué este teorema?</strong> Es una herramienta poderosa que relaciona el trabajo con el movimiento del objeto. Nos permite encontrar la velocidad sin necesidad de calcular la aceleración directamente.</p>
+                    <p>Dado que no hay rozamiento, el trabajo neto es igual al trabajo que calculamos. La energía cinética inicial ($K_i$) es cero porque el trineo parte del reposo.</p>
+                    <div class="equation">$$689.4 \, \text{J} = \frac{1}{2}(80 \, \text{kg})v_f^2 - 0$$</div>
+                    <p>Despejamos la velocidad final, $v_f$:</p>
+                    <div class="equation">$$v_f = \sqrt{\frac{2 \cdot 689.4 \, \text{J}}{80 \, \text{kg}}} \approx 4.15 \, \text{m/s}$$</div>
+                </section>
+                
+                 <div class="results-summary">
+                    <h3>Resumen de resultados:</h3>
+                    <ul>
+                        <li>Trabajo realizado por el profesor: $689.4 \, \text{J}$</li>
+                        <li><strong>Velocidad final del trineo: $4.15 \, \text{m/s}$</strong></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Este script llama a la función correcta dentro de main.js -->
+    <script src="js/main.js"></script>
+</body>
+</html>

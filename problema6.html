@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 6: Sistema de Bloques y Polea</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 6
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 6: Sistema de Bloques y Polea</h1>
+
+                <section>
+                    <h2>Paso 1: Análisis del Sistema y Datos</h2>
+                    <p>Tenemos un sistema de dos bloques conectados. El movimiento es impulsado por la caída del bloque de 2 kg, pero frenado por la fricción del bloque de 4 kg. Usaremos el <strong>Teorema del Trabajo y la Energía para sistemas con fuerzas no conservativas</strong>.</p>
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa del bloque en la plataforma ($m_1$): $4 \, \text{kg}$</li>
+                        <li>Masa del bloque colgante ($m_2$): $2 \, \text{kg}$</li>
+                        <li>Coeficiente de rozamiento cinético ($\mu_k$): $0.35$</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p6" width="450" height="250"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: (a) Energía Disipada por Rozamiento</h2>
+                    <p>La energía disipada es igual al trabajo (en magnitud) realizado por la fuerza de fricción ($W_f$). El trabajo de la fricción es siempre negativo, pero la energía "disipada" se reporta como un valor positivo.</p>
+                    <p class="question"><strong>¿Cómo calculamos la fuerza de fricción?</strong> $f_k = \mu_k \cdot N$. En una superficie horizontal, la fuerza normal ($N$) es igual al peso del bloque $m_1$, es decir, $N = m_1g$.</p>
+                    
+                    <div class="equation">$$f_k = \mu_k \cdot m_1g = (0.35)(4 \, \text{kg})(9.8 \, \text{m/s}^2) = 13.72 \, \text{N}$$</div>
+                    <p>Cuando el bloque de 2 kg cae una distancia $y$, el bloque de 4 kg se mueve la misma distancia $y$. La energía disipada es:</p>
+                    <div class="equation">$$E_{\text{disipada}} = |W_f| = f_k \cdot y = 13.72 \cdot y$$</div>
+                    <p><strong>Resultado (a):</strong> La energía disipada es $13.72y$ Joules, donde $y$ es la distancia caída.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 3: (b) Energía Mecánica Total del Sistema ($E_{mec}$)</h2>
+                    <p>El teorema del trabajo y la energía establece que el trabajo realizado por las fuerzas no conservativas ($W_{nc}$) es igual al cambio en la energía mecánica del sistema ($\Delta E_{mec}$). En nuestro caso, $W_{nc} = W_f$.</p>
+                    <div class="equation">$$W_f = \Delta E_{mec} = E_{mec, f} - E_{mec, i}$$</div>
+                    <p>El problema nos pide suponer que la energía mecánica inicial es cero ($E_{mec, i} = 0$). Por lo tanto, la energía mecánica final es simplemente el trabajo realizado por la fricción.</p>
+                    <div class="equation">$$E_{mec, f} = W_f = -f_k \cdot y = -13.72 \cdot y$$</div>
+                    <p><strong>Resultado (b):</strong> La energía mecánica total del sistema después de caer una distancia $y$ es $-13.72y$ Joules. El signo negativo indica que el sistema ha perdido esa cantidad de energía debido a la fricción.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 4: (c) Velocidad de los Bloques tras caer 2 m</h2>
+                    <p>Para encontrar la velocidad, expandimos la ecuación del paso anterior: $W_f = \Delta E_{mec} = \Delta K + \Delta U_g$.</p>
+                    <ul>
+                        <li><strong>Cambio en Energía Cinética ($\Delta K$):</strong> Ambos bloques se mueven a la misma velocidad $v$. $\Delta K = (\frac{1}{2}m_1v^2 + \frac{1}{2}m_2v^2) - 0 = \frac{1}{2}(m_1+m_2)v^2$.</li>
+                        <li><strong>Cambio en Energía Potencial ($\Delta U_g$):</strong> Solo el bloque $m_2$ cambia su altura. $\Delta U_g = m_2g\Delta h = m_2g(-y) = -m_2gy$.</li>
+                    </ul>
+                    <p>Sustituyendo en la ecuación principal:</p>
+                    <div class="equation">$$W_f = \frac{1}{2}(m_1+m_2)v^2 - m_2gy$$</div>
+                    <p>Ahora, usamos $y = 2 \, \text{m}$ y los valores conocidos:</p>
+                    <div class="equation">$$(-13.72 \cdot 2) = \frac{1}{2}(4+2)v^2 - (2)(9.8)(2)$$</div>
+                    <div class="equation">$$-27.44 = 3v^2 - 39.2$$</div>
+                    <p>Despejamos $v^2$:</p>
+                    <div class="equation">$$39.2 - 27.44 = 3v^2 \implies 11.76 = 3v^2$$</div>
+                    <div class="equation">$$v^2 = \frac{11.76}{3} = 3.92$$</div>
+                    <p>Y finalmente, la velocidad:</p>
+                    <div class="equation">$$v = \sqrt{3.92} \approx 1.98 \, \text{m/s}$$</div>
+                </section>
+
+                <div class="results-summary">
+                    <h3>Resumen de resultados:</h3>
+                    <ul>
+                        <li>(a) Energía disipada: $E_{\text{disipada}} = 13.72y \, \text{J}$</li>
+                        <li>(b) Energía mecánica total: $E_{mec} = -13.72y \, \text{J}$</li>
+                        <li>(c) Velocidad tras caer 2 m: <strong>$1.98 \, \text{m/s}$</strong></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

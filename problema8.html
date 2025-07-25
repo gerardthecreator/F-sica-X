@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 8: Fuerza Variable y Trabajo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 8
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 8: Fuerza Variable y Trabajo</h1>
+
+                <section>
+                    <h2>Paso 1: Análisis del Problema y Datos</h2>
+                    <p>Este problema introduce una <strong>fuerza variable</strong>, representada por un gráfico. El concepto clave es que el trabajo realizado por una fuerza variable es igual al <strong>área bajo la curva</strong> en un gráfico de Fuerza vs. Posición (F-x).</p>
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa del objeto ($m$): $6 \, \text{kg}$</li>
+                        <li>Velocidad en x=0 ($v_i$): $3 \, \text{m/s}$</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p8" width="500" height="300"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: (a) Energía Cinética en x = 0 m</h2>
+                    <p>La energía cinética inicial ($K_i$) se calcula directamente con la velocidad inicial.</p>
+                    <div class="equation">$$K_i = \frac{1}{2}mv_i^2$$</div>
+                    <div class="equation">$$K_i = \frac{1}{2}(6 \, \text{kg})(3 \, \text{m/s})^2 = (3)(9) = 27 \, \text{J}$$</div>
+                    <p><strong>Resultado (a):</strong> La energía cinética inicial del objeto es de <strong>27 Joules</strong>.</p>
+                </section>
+                
+                <section>
+                    <h2>Paso 3: (b) Trabajo Realizado entre x = 0 m y x = 16 m</h2>
+                    <p>El trabajo total ($W_{\text{total}}$) es el área total bajo el gráfico F-x desde x=0 hasta x=16. Podemos dividir esta área en tres formas geométricas simples:</p>
+                    <ul>
+                        <li><strong>Área 1 (x=0 a x=6):</strong> Un rectángulo.</li>
+                        <li><strong>Área 2 (x=6 a x=10):</strong> Un trapecio (o un rectángulo y un triángulo).</li>
+                        <li><strong>Área 3 (x=10 a x=16):</strong> Otro rectángulo.</li>
+                    </ul>
+                    <div class="equation">$$W_1 = \text{base} \times \text{altura} = (6 \, \text{m}) \times (30 \, \text{N}) = 180 \, \text{J}$$</div>
+                    <div class="equation">$$W_2 = \left(\frac{\text{base}_1 + \text{base}_2}{2}\right) \times \text{altura} = \left(\frac{30+20}{2}\right) \times (4 \, \text{m}) = 100 \, \text{J}$$</div>
+                    <div class="equation">$$W_3 = \text{base} \times \text{altura} = (6 \, \text{m}) \times (20 \, \text{N}) = 120 \, \text{J}$$</div>
+                    <p>El trabajo total es la suma de estas áreas:</p>
+                    <div class="equation">$$W_{\text{total}} = W_1 + W_2 + W_3 = 180 + 100 + 120 = 400 \, \text{J}$$</div>
+                    <p><strong>Resultado (b):</strong> El trabajo realizado por la fuerza es de <strong>400 Joules</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 4: (c) Velocidad en x = 16 m</h2>
+                    <p>Usamos el <strong>Teorema del Trabajo y la Energía Cinética</strong>: el trabajo neto es igual al cambio en la energía cinética.</p>
+                    <div class="equation">$$W_{\text{neto}} = \Delta K = K_f - K_i$$</div>
+                    <p>Conocemos $W_{\text{neto}} = 400 \, \text{J}$ y $K_i = 27 \, \text{J}$. Despejamos la energía cinética final ($K_f$):</p>
+                    <div class="equation">$$K_f = W_{\text{neto}} + K_i = 400 \, \text{J} + 27 \, \text{J} = 427 \, \text{J}$$</div>
+                    <p>Ahora, usamos $K_f$ para encontrar la velocidad final ($v_f$):</p>
+                    <div class="equation">$$427 \, \text{J} = \frac{1}{2}mv_f^2 = \frac{1}{2}(6)v_f^2 = 3v_f^2$$</div>
+                    <div class="equation">$$v_f = \sqrt{\frac{427}{3}} \approx 11.93 \, \text{m/s}$$</div>
+                    <p><strong>Resultado (c):</strong> La velocidad final del objeto es de <strong>11.93 m/s</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 5: (d) Trabajo de una Segunda Fuerza para Velocidad Constante</h2>
+                    <p class="question"><strong>¿Qué significa "velocidad constante"?</strong> Significa que no hay cambio en la energía cinética ($\Delta K = 0$).</p>
+                    <p>Si $\Delta K = 0$, el trabajo neto total sobre el objeto también debe ser cero: $W_{\text{neto}} = 0$. El trabajo neto es la suma del trabajo de la fuerza original ($W_F$) y el trabajo de la nueva fuerza ($W_{F2}$).</p>
+                    <div class="equation">$$W_{\text{neto}} = W_F + W_{F2} = 0$$</div>
+                    <p>Ya sabemos que $W_F = 400 \, \text{J}$. Por lo tanto:</p>
+                    <div class="equation">$$400 \, \text{J} + W_{F2} = 0 \implies W_{F2} = -400 \, \text{J}$$</div>
+                    <p><strong>Resultado (d):</strong> La segunda fuerza debe realizar un trabajo de <strong>-400 Joules</strong> para contrarrestar la fuerza original y mantener la velocidad constante.</p>
+                </section>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

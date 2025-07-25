@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 4: La Montaña Rusa y el Rizo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 4
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 4: La Montaña Rusa y el Rizo</h1>
+
+                <section>
+                    <h2>Paso 1: Análisis del Problema y Diagrama</h2>
+                    <p>Este problema combina la conservación de la energía con la dinámica del movimiento circular. El objetivo es encontrar la altura mínima $h$ desde la que debe soltarse un carrito para que complete un rizo vertical de radio $R$ sin caerse.</p>
+                    <canvas id="dcl-canvas-p4" width="450" height="300"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: Condición Crítica en la Cima del Rizo</h2>
+                    <p>El momento clave ocurre en la cima del rizo (Punto B). Para que el carrito "apenas" complete la vuelta, debe mantener el contacto con la vía. En la situación límite, la fuerza normal ($N$) que la vía ejerce sobre el carrito se reduce a cero.</p>
+                    <p class="question"><strong>¿Por qué es $N=0$ el punto crítico?</strong> Si la velocidad fuera menor, el carrito se separaría de la vía y caería. Si fuera mayor, la vía simplemente ejercería una fuerza normal. Por tanto, $N=0$ define la velocidad mínima absoluta para mantenerse en la trayectoria circular.</p>
+                    <p>En ese instante, la única fuerza que apunta hacia el centro del rizo es el peso ($mg$), que debe proporcionar toda la fuerza centrípeta necesaria ($F_c = mv^2/R$).</p>
+                    <div class="equation">$$mg = \frac{mv_B^2}{R}$$</div>
+                    <p>De aquí obtenemos la velocidad al cuadrado mínima que el carrito debe tener en el Punto B:</p>
+                    <div class="equation">$$v_B^2 = gR$$</div>
+                </section>
+
+                <section>
+                    <h2>Paso 3: Aplicando la Conservación de la Energía</h2>
+                    <p>Ahora usamos la conservación de la energía para relacionar el punto de partida (A) con el punto crítico (B). Asumimos que no hay fricción.</p>
+                    <div class="equation">$$E_A = E_B \implies mgh = \frac{1}{2}mv_B^2 + mg(2R)$$</div>
+                    <p>Donde $h$ es la altura inicial en A y $2R$ es la altura en la cima del rizo en B.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 4: Resolución de la Altura Mínima</h2>
+                    <p>El paso final es combinar las dos ideas: sustituimos la condición de velocidad ($v_B^2 = gR$) del Paso 2 en la ecuación de energía del Paso 3.</p>
+                    <div class="equation">$$mgh = \frac{1}{2}m(gR) + mg(2R)$$</div>
+                    <p>Como la masa ($m$) y la gravedad ($g$) están en todos los términos, las cancelamos:</p>
+                    <div class="equation">$$h = \frac{1}{2}R + 2R$$</div>
+                    <p>Simplificando la expresión, encontramos la altura mínima requerida:</p>
+                    <div class="equation">$$h = \frac{5}{2}R = 2.5 R$$</div>
+                </section>
+                
+                <section>
+                    <h2>Paso 5: Conclusión Final</h2>
+                    <div class="results-summary">
+                        <h3>Resultado:</h3>
+                        <p>Para que un objeto complete un rizo vertical de radio $R$ sin caerse, debe ser soltado desde el reposo a una altura mínima de <strong>2.5 veces el radio del rizo</strong>, independientemente de su masa.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

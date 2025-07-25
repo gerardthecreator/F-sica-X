@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 7: Muelle, Montaña y Roce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 7
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 7: Muelle, Montaña y Roce</h1>
+
+                <section>
+                    <h2>Paso 1: Análisis del Problema y Datos</h2>
+                    <p>Este problema integra la energía potencial elástica ($U_e$), la energía potencial gravitatoria ($U_g$) y el trabajo realizado por la fricción ($W_f$).</p>
+                    <p class="question"><strong>NOTA IMPORTANTE:</strong> El enunciado indica una masa de 0 kg, lo cual es físicamente imposible. Para resolver el problema, asumiremos una masa de <strong>m = 1 kg</strong>.</p>
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa del bloque ($m$): $1 \, \text{kg}$</li>
+                        <li>Constante del muelle ($k$): $100 \, \text{N/m}$</li>
+                        <li>Altura de la montaña ($h$): $2 \, \text{m}$</li>
+                        <li>Ángulo del plano inclinado ($\beta$): $30^\circ$</li>
+                        <li>Coeficiente de roce cinético ($\mu_k$): $1/\sqrt{3} \approx 0.577$</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p7" width="550" height="300"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: (a) Mínima Compresión para Superar la Montaña</h2>
+                    <p>Para esta parte, solo nos interesa el tramo desde el muelle hasta la cima de la montaña. En este tramo no hay fricción, por lo que la energía se conserva.</p>
+                    <p class="question"><strong>¿Cuál es la condición mínima?</strong> Que el bloque llegue a la cima de la montaña ($h=2$ m) con una velocidad que apenas sea cero ($v=0$).</p>
+                    <p>Igualamos la energía inicial (muelle comprimido) con la energía en la cima de la montaña (potencial gravitatoria).</p>
+                    <div class="equation">$$E_{\text{inicial (muelle)}} = E_{\text{final (cima)}}$$</div>
+                    <div class="equation">$$\frac{1}{2}kx^2 = mgh$$</div>
+                    <p>Despejamos la compresión $x$:</p>
+                    <div class="equation">$$\frac{1}{2}(100)x^2 = (1)(9.8)(2)$$</div>
+                    <div class="equation">$$50x^2 = 19.6$$</div>
+                    <div class="equation">$$x = \sqrt{\frac{19.6}{50}} = \sqrt{0.392} \approx 0.626 \, \text{m}$$</div>
+                    <p><strong>Resultado (a):</strong> Se debe comprimir el resorte como mínimo <strong>62.6 cm</strong>.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 3: (b) Ascenso en el Plano Inclinado con Roce</h2>
+                    <p>Ahora consideramos la trayectoria completa, desde el muelle hasta que el bloque se detiene en el plano inclinado con roce. La energía inicial del muelle se convierte en energía potencial gravitatoria final y en energía disipada por la fricción.</p>
+                    <div class="equation">$$E_{\text{inicial}} = E_{\text{final}} + E_{\text{disipada por roce}}$$</div>
+                    <div class="equation">$$\frac{1}{2}kx^2 = mgh_f + |W_f|$$</div>
+                    <p>Sabemos que la energía inicial es $19.6 \, \text{J}$. El trabajo de la fricción es $W_f = f_k \cdot d$, donde $d$ es la distancia recorrida sobre el plano. La fuerza de roce es $f_k = \mu_k N = \mu_k mg\cos(\beta)$. Y la altura final es $h_f = d\sin(\beta)$.</p>
+                    <p>Sustituimos todo en la ecuación de energía:</p>
+                    <div class="equation">$$19.6 = mg(d\sin(\beta)) + (\mu_k mg\cos(\beta))d$$</div>
+                    <p>Factorizamos $mgd$ para simplificar:</p>
+                    <div class="equation">$$19.6 = mgd (\sin(\beta) + \mu_k \cos(\beta))$$</div>
+                    <p>Ahora resolvemos para $d$, sustituyendo los valores numéricos. ¡Presta atención a la simplificación!</p>
+                    <div class="equation">$$19.6 = (1)(9.8)d \left(\sin(30^\circ) + \frac{1}{\sqrt{3}}\cos(30^\circ)\right)$$</div>
+                    <div class="equation">$$19.6 = 9.8d \left(\frac{1}{2} + \frac{1}{\sqrt{3}} \cdot \frac{\sqrt{3}}{2}\right)$$</div>
+                    <div class="equation">$$19.6 = 9.8d \left(\frac{1}{2} + \frac{1}{2}\right) = 9.8d(1)$$</div>
+                    <p>La solución se vuelve muy elegante:</p>
+                    <div class="equation">$$d = \frac{19.6}{9.8} = 2 \, \text{m}$$</div>
+                </section>
+
+                <div class="results-summary">
+                    <h3>Resumen de resultados:</h3>
+                    <ul>
+                        <li>(a) Mínima compresión del resorte: <strong>$0.626 \, \text{m}$ (62.6 cm)</strong></li>
+                        <li>(b) Distancia ascendida en el plano con roce: <strong>$2.0 \, \text{m}$</strong></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 5: Muelle y Plano Inclinado</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 5
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 5: El Muelle y el Plano Inclinado</h1>
+
+                <section>
+                    <h2>Paso 1: Entendiendo el Problema y los Conceptos</h2>
+                    <p>Este problema introduce la <strong>Energía Potencial Elástica ($U_e$)</strong>, que es la energía almacenada en un muelle deformado. Como todo el sistema no tiene rozamiento, la energía mecánica total se conservará desde el inicio hasta el final.</p>
+                    <p>La fórmula para la energía potencial elástica es:</p>
+                    <div class="equation">$$U_e = \frac{1}{2}kx^2$$</div>
+                    <p>Donde $k$ es la constante elástica del muelle y $x$ es la distancia que se comprime o estira (en metros).</p>
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa del bloque ($m$): $2 \, \text{kg}$</li>
+                        <li>Constante del muelle ($k$): $500 \, \text{N/m}$</li>
+                        <li>Compresión del muelle ($x$): $20 \, \text{cm} = 0.20 \, \text{m}$</li>
+                        <li>Ángulo del plano inclinado ($\theta$): $43^\circ$</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p5" width="500" height="300"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: Definiendo los Estados Inicial y Final</h2>
+                    <p>La clave en los problemas de conservación de energía es identificar los puntos inicial y final y la energía presente en cada uno.</p>
+                    <ul>
+                        <li><strong>Estado A (Inicial):</strong> El bloque está en reposo, comprimiendo el muelle. Toda la energía del sistema está almacenada en el muelle como energía potencial elástica ($U_e$). No hay energía cinética ($K=0$) ni potencial gravitatoria ($U_g=0$, si definimos el suelo como altura cero).</li>
+                        <li><strong>Estado B (Final):</strong> El bloque ha subido por el plano inclinado y se detiene momentáneamente. En este punto, toda la energía se ha transformado en energía potencial gravitatoria ($U_g$). No hay energía cinética ($K=0$) ni elástica ($U_e=0$).</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Paso 3: Aplicando la Conservación de la Energía</h2>
+                    <p class="question"><strong>¿Cómo se aplica la conservación?</strong> Simplemente igualamos la energía total del estado inicial con la energía total del estado final.</p>
+                    <div class="equation">$$E_{\text{Inicial}} = E_{\text{Final}}$$</div>
+                    <div class="equation">$$\frac{1}{2}kx^2 = mgh$$</div>
+                    <p>Ahora, calculamos la energía inicial almacenada en el muelle:</p>
+                    <div class="equation">$$E_{\text{Inicial}} = \frac{1}{2}(500 \, \text{N/m})(0.20 \, \text{m})^2 = \frac{1}{2}(500)(0.04) = 10 \, \text{J}$$</div>
+                    <p>Esta energía es la que tendrá el bloque en la cima del plano en forma de energía potencial gravitatoria. Con esto, podemos calcular la altura máxima ($h$) que alcanza:</p>
+                    <div class="equation">$$10 \, \text{J} = mgh = (2 \, \text{kg})(9.8 \, \text{m/s}^2)h$$</div>
+                    <div class="equation">$$h = \frac{10}{19.6} \approx 0.51 \, \text{m}$$</div>
+                </section>
+
+                <section>
+                    <h2>Paso 4: Calculando la Distancia sobre el Plano</h2>
+                    <p>El problema no pide la altura vertical ($h$), sino la <strong>distancia ($d$)</strong> que recorre el bloque sobre el plano inclinado.</p>
+                    <p class="question"><strong>¿Cómo relacionamos altura y distancia en un plano inclinado?</strong> Usamos trigonometría básica. La altura $h$ es el cateto opuesto al ángulo $\theta$, y la distancia $d$ es la hipotenusa.</p>
+                    <div class="equation">$$\sin(\theta) = \frac{\text{opuesto}}{\text{hipotenusa}} = \frac{h}{d}$$</div>
+                    <p>Despejamos la distancia $d$:</p>
+                    <div class="equation">$$d = \frac{h}{\sin(\theta)} = \frac{0.51 \, \text{m}}{\sin(43^\circ)}$$</div>
+                    <div class="equation">$$d \approx \frac{0.51}{0.682} \approx 0.75 \, \text{m}$$</div>
+                </section>
+
+                <div class="results-summary">
+                    <h3>Conclusión del Problema:</h3>
+                    <p>El bloque recorre una distancia de aproximadamente <strong>0.75 metros (o 75 cm)</strong> hacia arriba sobre el plano inclinado antes de detenerse.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

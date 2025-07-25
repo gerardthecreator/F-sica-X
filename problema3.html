@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 3: El Esquiador en la Rampa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 3
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 3: El Esquiador en la Rampa</h1>
+
+                <section>
+                    <h2>Paso 1: Entendiendo el Problema y los Conceptos Clave</h2>
+                    <p>Este problema introduce cambios de altura, por lo que debemos usar la <strong>Energía Potencial Gravitatoria ($U_g = mgh$)</strong>. Analizaremos un caso ideal (sin fricción) y uno realista (con fricción).</p>
+                    <h3>Datos conocidos:</h3>
+                    <ul>
+                        <li>Masa ($m$): $70 \, \text{kg}$</li>
+                        <li>Altura inicial ($h_i$): $20 \, \text{m}$</li>
+                        <li>Velocidad inicial ($v_i$): $0 \, \text{m/s}$</li>
+                        <li>Altura final ($h_f$): $0 \, \text{m}$</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p3" width="400" height="250"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: Cálculo SIN Fricción (Conservación de Energía)</h2>
+                    <p>Sin fricción, la energía mecánica total se conserva. La energía al inicio es igual a la energía al final.</p>
+                    <div class="equation">$$E_{\text{inicial}} = E_{\text{final}} \quad \implies \quad K_i + U_{gi} = K_f + U_{gf}$$</div>
+                    <p class="question"><strong>¿Por qué este principio?</strong> Permite resolver el problema comparando solo el punto de partida y el de llegada, sin preocuparnos por la forma de la rampa.</p>
+                    
+                    <h3>Aplicación y Resolución:</h3>
+                    <ul>
+                        <li>La energía inicial es puramente potencial, ya que parte del reposo ($K_i=0$).</li>
+                        <li>La energía final es puramente cinética, ya que llega a la altura cero ($U_{gf}=0$).</li>
+                    </ul>
+                    <p>Por lo tanto, la energía potencial inicial se convierte completamente en energía cinética final:</p>
+                    <div class="equation">$$mgh_i = \frac{1}{2}mv_f^2$$</div>
+                    <p>Cancelamos la masa ($m$) y despejamos la velocidad final ($v_f$):</p>
+                    <div class="equation">$$v_f = \sqrt{2gh_i} = \sqrt{2 \cdot 9.8 \cdot 20} \approx 19.8 \, \text{m/s}$$</div>
+                </section>
+                
+                <section>
+                    <h2>Paso 3: Cálculo CON Fricción (Teorema Trabajo-Energía)</h2>
+                    <p>La fricción es una fuerza no conservativa que realiza un trabajo negativo ($W_{f_k}$), disipando energía. La energía ya no se conserva.</p>
+                    <p>La relación ahora es: el trabajo de la fricción es igual al cambio en la energía mecánica.</p>
+                    <div class="equation">$$W_{f_k} = E_f - E_i$$</div>
+                    <p>Para este problema, asumimos que la fricción realiza un trabajo de $\mathbf{-2500 \, J}$.</p>
+                    
+                    <h3>Aplicación y Resolución:</h3>
+                    <p>Despejamos la energía final ($E_f$):</p>
+                    <div class="equation">$$E_f = E_i + W_{f_k}$$</div>
+                    <p>Conocemos $E_i = mgh_i = 13720 \, \text{J}$ del paso anterior.</p>
+                    <div class="equation">$$E_f = 13720 \, \text{J} - 2500 \, \text{J} = 11220 \, \text{J}$$</div>
+                    <p>Esta energía final es la energía cinética en la base de la rampa. Ahora calculamos la nueva velocidad:</p>
+                    <div class="equation">$$11220 \, \text{J} = \frac{1}{2}(70 \, \text{kg})v_f^2$$</div>
+                    <div class="equation">$$v_f = \sqrt{\frac{2 \cdot 11220}{70}} \approx 17.9 \, \text{m/s}$$</div>
+                </section>
+
+                <section>
+                    <h2>Paso 4: Conclusiones</h2>
+                    <p>Como era de esperar, la velocidad final es menor cuando hay fricción, ya que parte de la energía inicial se perdió en forma de calor.</p>
+                    <div class="results-summary">
+                        <h3>Resumen de resultados:</h3>
+                        <ul>
+                            <li>Velocidad final sin fricción (ideal): <strong>$19.8 \, \text{m/s}$</strong></li>
+                            <li>Velocidad final con fricción (realista): <strong>$17.9 \, \text{m/s}$</strong></li>
+                        </ul>
+                    </div>
+                </section>
+            </article>
+        </div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

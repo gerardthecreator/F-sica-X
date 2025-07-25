@@ -1,0 +1,156 @@
+/* --- Variables y Estilos Globales --- */
+:root {
+    --primary-color: #0d47a1; /* Azul oscuro */
+    --secondary-color: #1976d2; /* Azul medio */
+    --background-color: #f4f7f9; /* Gris muy claro */
+    --text-color: #333;
+    --header-text-color: #ffffff;
+    --card-bg-color: #ffffff;
+    --code-bg-color: #eef2f5;
+    --border-color: #d1d9e0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    line-height: 1.7;
+    font-weight: 400;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+main {
+    padding: 30px 0;
+}
+
+/* --- Encabezado y Pie de Página --- */
+header {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: 'Anton', sans-serif;
+    margin: 0;
+    font-size: 3em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- Estilos de Contenido (Problemas) --- */
+article {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 30px 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+h1.problem-title, h2 {
+    font-family: 'Anton', sans-serif;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+}
+
+h1.problem-title {
+    margin-top: 0;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    font-size: 2.8em;
+}
+
+h2 {
+    color: var(--secondary-color);
+    font-size: 2.2em;
+    margin-top: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.4em;
+}
+
+.question {
+    font-style: italic;
+    background-color: var(--code-bg-color);
+    padding: 12px 18px;
+    border-left: 4px solid var(--secondary-color);
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+/* --- Ecuaciones y Resultados --- */
+.equation {
+    background-color: var(--code-bg-color);
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    overflow-x: auto;
+}
+
+.results-summary {
+    background-color: #e8f5e9;
+    border: 1px solid #a5d6a7;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+.results-summary h3 {
+    margin-top: 0;
+    color: #1b5e20;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+.results-summary ul {
+    padding-left: 20px;
+    margin: 0;
+    font-size: 1.1em;
+    list-style-type: none;
+}
+
+.results-summary li {
+    padding: 5px 0;
+}
+
+/* --- Canvas para DCL --- */
+canvas {
+    border: 1px solid var(--border-color);
+    background-color: #fff;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+/* --- Navegación --- */
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}

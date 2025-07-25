@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 1: El Granjero y el Trineo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- CONFIGURACIÓN DE MATHJAX -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Problema 1
+            </nav>
+            <article>
+                <h1 class="problem-title">Problema 1: El Granjero y el Trineo</h1>
+
+                <section>
+                    <h2>Paso 1: Entendiendo el Problema y Diagrama de Cuerpo Libre (DCL)</h2>
+                    <p>Este problema nos pide calcular el trabajo realizado por cada fuerza que actúa sobre un trineo y el trabajo total. Para ello, es fundamental entender las fuerzas involucradas y su dirección.</p>
+                    <p class="question"><strong>¿Por qué un Diagrama de Cuerpo Libre (DCL)?</strong> Un DCL nos ayuda a visualizar todas las fuerzas que actúan sobre el objeto (el trineo en este caso) y sus direcciones. Esto es crucial para descomponer fuerzas y aplicar las ecuaciones correctas.</p>
+                    
+                    <h3>Las fuerzas que actúan son:</h3>
+                    <ul>
+                        <li><strong>Fuerza del tractor ($F$):</strong> La fuerza que ejerce el tractor sobre el trineo, con un ángulo de $30^\circ$ sobre la horizontal.</li>
+                        <li><strong>Fuerza de fricción ($f_k$):</strong> Se opone al movimiento, por lo tanto, va en dirección contraria al desplazamiento.</li>
+                        <li><strong>Peso ($mg$):</strong> La fuerza de la gravedad, siempre vertical hacia abajo.</li>
+                        <li><strong>Fuerza Normal ($N$):</strong> La fuerza que ejerce la superficie sobre el trineo, perpendicular a la superficie y hacia arriba.</li>
+                    </ul>
+                    <canvas id="dcl-canvas-p1" width="400" height="250"></canvas>
+                </section>
+
+                <section>
+                    <h2>Paso 2: Datos y Descomposición de la Fuerza</h2>
+                    <p>Primero, listamos los datos conocidos:</p>
+                    <ul>
+                        <li>Masa total ($m$) = $1500 \, \text{kg}$</li>
+                        <li>Distancia ($d$) = $40 \, \text{m}$</li>
+                        <li>Fuerza del tractor ($F$) = $4000 \, \text{N}$</li>
+                        <li>Ángulo ($\theta$) = $30^\circ$</li>
+                        <li>Fuerza de fricción ($f_k$) = $2800 \, \text{N}$</li>
+                    </ul>
+                    <p>La fuerza del tractor ($F$) tiene componentes horizontal ($F_x$) y vertical ($F_y$):</p>
+                    <div class="equation">$$F_x = F \cos(\theta) = 4000 \, \text{N} \cdot \cos(30^\circ)$$</div>
+                    <div class="equation">$$F_y = F \sin(\theta) = 4000 \, \text{N} \cdot \sin(30^\circ)$$</div>
+                    <p class="question"><strong>¿Para qué descomponer?</strong> El trabajo se calcula como $W = F \cdot d \cdot \cos(\alpha)$. Al descomponer, podemos ver que solo la componente en la dirección del movimiento ($F_x$) realiza trabajo.</p>
+                </section>
+
+                <section>
+                    <h2>Paso 3: Cálculo del Trabajo Realizado por Cada Fuerza</h2>
+                    <p>El trabajo ($W$) realizado por una fuerza constante se define como:</p>
+                    <div class="equation">$$W = F \cdot d \cdot \cos(\alpha)$$</div>
+                    
+                    <h3>Trabajo realizado por la fuerza del tractor ($W_F$):</h3>
+                    <p>El ángulo entre la fuerza $F$ y el desplazamiento $d$ es de $30^\circ$.</p>
+                    <div class="equation">$$W_F = (4000 \, \text{N}) \cdot (40 \, \text{m}) \cdot \cos(30^\circ) \approx 138,560 \, \text{J}$$</div>
+
+                    <h3>Trabajo realizado por la fuerza de fricción ($W_{f_k}$):</h3>
+                    <p>La fuerza de fricción se opone al movimiento, por lo que el ángulo es de $180^\circ$.</p>
+                    <div class="equation">$$W_{f_k} = f_k \cdot d \cdot \cos(180^\circ) = (2800 \, \text{N}) \cdot (40 \, \text{m}) \cdot (-1) = -112,000 \, \text{J}$$</div>
+                    <p class="question"><strong>¿Por qué un trabajo negativo?</strong> Porque la fuerza de fricción actúa en dirección opuesta al movimiento, "quitando" energía al sistema.</p>
+
+                    <h3>Trabajo realizado por el peso ($W_P$) y la fuerza normal ($W_N$):</h3>
+                    <p>Ambas fuerzas actúan perpendicularmente al desplazamiento ($\alpha = 90^\circ$), por lo que no realizan trabajo.</p>
+                    <div class="equation">$$W_P = 0 \, \text{J} \quad \text{y} \quad W_N = 0 \, \text{J}$$</div>
+                </section>
+                
+                <section>
+                    <h2>Paso 4: Cálculo del Trabajo Total</h2>
+                    <p>El trabajo total ($W_{\text{total}}$) es la suma algebraica de todos los trabajos.</p>
+                    <div class="equation">$$W_{\text{total}} = W_F + W_{f_k} + W_P + W_N$$</div>
+                    <div class="equation">$$W_{\text{total}} = 138,560 \, \text{J} - 112,000 \, \text{J} + 0 \, \text{J} + 0 \, \text{J} = 26,560 \, \text{J}$$</div>
+                    <p class="question"><strong>¿Para qué el trabajo total?</strong> Según el Teorema del Trabajo y la Energía Cinética, es igual al cambio en la energía cinética del objeto. Un trabajo total positivo significa que el objeto acelera.</p>
+                </section>
+
+                <div class="results-summary">
+                    <h3>Resumen de resultados:</h3>
+                    <ul>
+                        <li>Trabajo de la fuerza del tractor: $138,560 \, \text{J}$</li>
+                        <li>Trabajo de la fuerza de fricción: $-112,000 \, \text{J}$</li>
+                        <li>Trabajo del peso: $0 \, \text{J}$</li>
+                        <li>Trabajo de la fuerza normal: $0 \, \text{J}$</li>
+                        <li><strong>Trabajo total: $26,560 \, \text{J}$</strong></li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Script para dibujar el Canvas -->
+    <script src="js/main.js"></script>
+</body>
+</html>
