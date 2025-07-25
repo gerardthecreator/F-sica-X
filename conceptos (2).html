@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Teórica de Trabajo y Energía</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Física: Trabajo y Energía I</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="index.html">Inicio</a> > Guía Teórica
+            </nav>
+            <article>
+                <h1 class="problem-title">Guía Teórica Completa: Trabajo y Energía</h1>
+                <p>Esta guía explica los conceptos fundamentales necesarios para resolver los problemas de esta serie, mostrando cómo se conectan entre sí.</p>
+
+                <section>
+                    <h2>1. El Concepto de Trabajo (W)</h2>
+                    <p>El trabajo es el mecanismo principal para <strong>transferir energía</strong> a un sistema mediante una fuerza. No es simplemente "esfuerzo"; en física, requiere que una fuerza provoque un desplazamiento.</p>
+                    <div class="equation">$$W = F \cdot d \cdot \cos(\alpha)$$</div>
+                    <p>Donde $F$ es la magnitud de la fuerza, $d$ es el desplazamiento y $\alpha$ el ángulo entre ambos. Su unidad es el <strong>Joule (J)</strong>.</p>
+                    <div class="question">
+                        <strong>Interpretación del Signo del Trabajo:</strong>
+                        <ul>
+                            <li><strong>Trabajo Positivo ($W > 0$):</strong> La fuerza (o su componente) actúa en la misma dirección que el desplazamiento. La fuerza <strong>añade energía</strong> al sistema (ej. empujar un auto para que acelere).</li>
+                            <li><strong>Trabajo Negativo ($W < 0$):</strong> La fuerza (o su componente) se opone al desplazamiento. La fuerza <strong>quita energía</strong> del sistema (ej. la fricción frenando un objeto).</li>
+                            <li><strong>Trabajo Cero ($W = 0$):</strong> La fuerza es perpendicular al desplazamiento (ej. sostener una maleta y caminar horizontalmente). No hay transferencia de energía en la dirección del movimiento.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2. Energía: La Capacidad de Realizar Trabajo</h2>
+                    <p>La energía es una propiedad de los sistemas que les permite realizar trabajo. Se manifiesta de muchas formas.</p>
+                    <h3>2.1. Energía Cinética (K): La Energía del Movimiento</h3>
+                    <p>Cualquier objeto en movimiento posee energía cinética.</p>
+                    <div class="equation">$$K = \frac{1}{2}mv^2$$</div>
+                    
+                    <h3>2.2. Energía Potencial (U): La Energía Almacenada</h3>
+                    <p>Es energía almacenada en un sistema debido a su configuración. Puede ser convertida en energía cinética.</p>
+                    <p><strong>Energía Potencial Gravitatoria ($U_g$):</strong> Energía almacenada por la posición (altura) en un campo gravitatorio.</p>
+                    <div class="equation">$$U_g = mgh$$</div>
+                    <p><strong>Energía Potencial Elástica ($U_e$):</strong> Energía almacenada en un objeto elástico (como un resorte) al ser deformado.</p>
+                    <div class="equation">$$U_e = \frac{1}{2}kx^2$$</div>
+                </section>
+
+                <section>
+                    <h2>3. Los Teoremas Fundamentales: Conectando Trabajo y Energía</h2>
+                    <p>Estos son los principios que nos permiten resolver problemas.</p>
+                    
+                    <h3>3.1. Teorema del Trabajo y la Energía Cinética (El más general)</h3>
+                    <p>El trabajo <strong>neto</strong> (la suma de todos los trabajos realizados por todas las fuerzas) es igual al cambio en la energía cinética. Este teorema <strong>siempre es válido</strong>.</p>
+                    <div class="equation">$$W_{\text{neto}} = \Delta K = K_f - K_i$$</div>
+                    <p><em>Aplicado en: Problemas 1, 2, 8.</em></p>
+                    
+                    <h3>3.2. Fuerzas Conservativas vs. No Conservativas</h3>
+                    <p>Para entender la conservación de la energía, debemos clasificar las fuerzas:</p>
+                    <ul>
+                        <li><strong>Fuerzas Conservativas:</strong> El trabajo que realizan no depende de la trayectoria (solo del punto inicial y final). Permiten almacenar y recuperar energía potencial. <strong>Ejemplos: Gravedad, Fuerza Elástica.</strong></li>
+                        <li><strong>Fuerzas No Conservativas:</strong> El trabajo que realizan SÍ depende de la trayectoria. Generalmente disipan energía del sistema en forma de calor o sonido. <strong>Ejemplos: Fricción, Resistencia del aire, Tensión.</strong></li>
+                    </ul>
+                    
+                    <h3>3.3. Principio de Conservación de la Energía Mecánica (Caso Ideal)</h3>
+                    <p>Definimos la <strong>Energía Mecánica Total</strong> como $E_{mec} = K + U$. Si en un sistema <strong>solo actúan fuerzas conservativas</strong>, la energía mecánica total no cambia.</p>
+                    <div class="equation">$$E_{\text{inicial}} = E_{\text{final}} \quad \text{o} \quad \Delta E_{mec} = 0$$</div>
+                    <div class="equation">$$K_i + U_{gi} + U_{ei} = K_f + U_{gf} + U_{ef}$$</div>
+                    <p><em>Aplicado en: Problemas 3(a), 4, 5.</em></p>
+                    
+                    <h3>3.4. Teorema Generalizado de Trabajo y Energía (Caso Realista)</h3>
+                    <p>Cuando hay fuerzas no conservativas (como la fricción), la energía mecánica total cambia. El cambio es exactamente igual al trabajo realizado por esas fuerzas no conservativas.</p>
+                    <div class="equation">$$W_{nc} = \Delta E_{mec} = E_f - E_i$$</div>
+                    <p>Este es el principio más completo, ya que abarca todos los casos. Si $W_{nc} = 0$, se reduce al principio de conservación.</p>
+                    <p><em>Aplicado en: Problemas 3(b), 6, 7.</em></p>
+                </section>
+                
+                <section>
+                    <h2>4. Tópicos Adicionales</h2>
+                    <h3>4.1. Trabajo de una Fuerza Variable</h3>
+                    <p>Si la fuerza cambia con la posición, el trabajo es el <strong>área bajo la curva</strong> en un gráfico Fuerza vs. Posición (F-x).</p>
+                    <div class="equation">$$W = \text{Área bajo F-x}$$</div>
+                    <p class="question"><strong>Para los curiosos del cálculo:</strong> Formalmente, esto se representa con una integral:</p>
+                    <div class="equation">$$W = \int_{x_i}^{x_f} F(x) \, dx$$</div>
+                    <p><em>Aplicado en: Problema 8.</em></p>
+
+                    <h3>4.2. Potencia (P)</h3>
+                    <p>La potencia es la <strong>rapidez</strong> con la que se realiza un trabajo o se transfiere energía. Se mide en <strong>Watts (W)</strong>, donde 1 W = 1 J/s.</p>
+                    <p><strong>Potencia Promedio:</strong></p>
+                    <div class="equation">$$P_{\text{prom}} = \frac{W}{\Delta t}$$</div>
+                    <p><strong>Potencia Instantánea:</strong></p>
+                    <div class="equation">$$P = F \cdot v \cdot \cos(\alpha)$$</div>
+                </section>
+
+                <div class="results-summary">
+                    <h3>Tabla Resumen de Fórmulas y Aplicaciones</h3>
+                    <table style="width:100%; text-align: left; border-collapse: collapse;">
+                        <tr style="border-bottom: 2px solid var(--primary-color);">
+                            <th style="padding: 8px;">Concepto</th>
+                            <th style="padding: 8px;">Fórmula</th>
+                            <th style="padding: 8px;">Cuándo Usarlo</th>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="padding: 8px;">Trabajo (Fuerza Constante)</td>
+                            <td style="padding: 8px;">$W = Fd\cos(\alpha)$</td>
+                            <td>Para calcular la energía transferida por una fuerza constante.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">Energía Cinética</td>
+                            <td style="padding: 8px;">$K = \frac{1}{2}mv^2$</td>
+                            <td>Para cuantificar la energía del movimiento.</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="padding: 8px;">Energía Potencial Gravitatoria</td>
+                            <td style="padding: 8px;">$U_g = mgh$</td>
+                            <td>Cuando hay cambios de altura.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">Energía Potencial Elástica</td>
+                            <td style="padding: 8px;">$U_e = \frac{1}{2}kx^2$</td>
+                            <td>Cuando hay resortes deformados.</td>
+                        </tr>
+                        <tr style="background-color: #f9f9f9;">
+                            <td style="padding: 8px;"><strong>Conservación de Energía</strong></td>
+                            <td style="padding: 8px;">$E_i = E_f$</td>
+                            <td><strong>SOLO si no hay fricción</strong> u otras fuerzas no conservativas.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;"><strong>Teorema Trabajo-Energía General</strong></td>
+                            <td style="padding: 8px;">$W_{nc} = \Delta K + \Delta U$</td>
+                            <td><strong>El método más robusto</strong>. Usar siempre que haya fricción.</td>
+                        </tr>
+                    </table>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
